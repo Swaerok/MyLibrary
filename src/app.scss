@@ -1,0 +1,77 @@
+body {
+  background-color: #222;
+  margin: 0;
+}
+.header {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  &__profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url('../img/vampires_bats.jpg');
+    background-repeat: no-repeat;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  &__logo {
+    min-height: 80px;
+    min-width: 80px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #fff;
+  }
+  &__search {
+    &__input {
+      width: 241px;
+      height: 43px;
+      padding: 12px 12px 12px 40px;
+      background-image: url('../img/outline_search.png');
+      background-repeat: no-repeat;
+      background-position: 5%;
+      border-radius: 50px;
+      background-color: #555;
+      font-size: 15px;
+      font-weight: 500;
+      color: #fff;
+      border: 1px solid #555;
+      outline: none;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.book {
+  width: 250px;
+  margin: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border: 5px solid #666;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  &__image {
+    max-width: 180px;
+    max-height: 280px;
+  }
+}
