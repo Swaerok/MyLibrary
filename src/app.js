@@ -3,28 +3,22 @@ import './app.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Book from './book';
+import { setSearchBooks } from './redux/actions/searchLib';
+import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
+  const items = useSelector(({ searchLib }) => searchLib.items);
   const [title, setTitle] = useState('');
-  const [date, setDate] = useState();
   const onChangeLabel = (e) => {
     setTitle(e.target.value);
   };
-  /*useEffect(() => {
-    axios
-      .get(`http://openlibrary.org/search.json?q=the+lord+of+the+rings&limit=10`)
-      .then((data) => {
-        setDate(data.data.docs);
-        console.log(data.data.docs);
-      });
-  }, []); */
   const handleFetch = (e) => {
     if (e.keyCode == 13) {
-      setDate([]);
+      dispatch(setSearchBooks([]));
       const res = title.split(' ').join('+');
       axios.get(`http://openlibrary.org/search.json?title=${res}&limit=10`).then((data) => {
-        setDate(data.data.docs);
-        console.log(data);
+        dispatch(setSearchBooks(data.data.docs));
       });
     }
   };
@@ -46,8 +40,8 @@ function App() {
         <div className="header__profile" />
       </div>
       <div className="container">
-        {date
-          ? date.map((obj, index) => (
+        {items
+          ? items.map((obj, index) => (
               <Book key={index} title={obj.title} author={obj.author_name} img={obj.isbn} />
             ))
           : '1'}
