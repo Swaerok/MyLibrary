@@ -5,7 +5,6 @@ const initialState = {
 const searchLib = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_SEARCH_BOOKS': {
-      console.log(action);
       return {
         ...state,
         items: action.payload,

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-function Book({ author, title, img }) {
+function Book({ onHandle, author, title, img, bookKey }) {
   const [image, setImage] = useState(img);
   if (author === 'undefined') {
     author = 'Unknown';
@@ -24,10 +24,14 @@ function Book({ author, title, img }) {
         });
     }
   }, []);
-
+  const handleBook = () => {
+    if (onHandle) {
+      onHandle({ author, title, img, bookKey });
+    }
+  };
   return (
-    <div className="book">
-      <div className="book__author">Author: {author}</div>
+    <div onClick={handleBook} className="book">
+      <div className="book__author">Author: {author[0]}</div>
       <div className="book__title">Title: {title}</div>
       <img className="book__image" src={image} alt="" />
     </div>

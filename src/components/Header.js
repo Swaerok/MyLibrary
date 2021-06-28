@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { setSearchBooks } from '../redux/actions/searchLib';
 import axios from 'axios';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [title, setTitle] = useState('');
@@ -24,9 +25,11 @@ function Header() {
   };
   return (
     <div className="header">
-      <div className="header__logo">
-        <img height="80" width="80" src="../img/logo.png" alt="No logo" />
-      </div>
+      <Link to="/">
+        <div className="header__logo">
+          <img height="80" width="80" src="../img/logo.png" alt="No logo" />
+        </div>
+      </Link>
       <div className="header__search">
         <InputSearch
           classN={'header__search__input'}
@@ -34,7 +37,9 @@ function Header() {
           onChange={onChangeLabel}
         />
       </div>
-      <div className="header__profile" />
+      <Link to="/profile">
+        <div className="header__profile" />
+      </Link>
     </div>
   );
 }
