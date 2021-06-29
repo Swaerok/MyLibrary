@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import Book from '../book';
+import Book from '../components/Book';
 import BookPopup from '../components/BookPopup';
 
 function FindedBooks() {

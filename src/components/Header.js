@@ -1,5 +1,5 @@
 import React from 'react';
-import InputSearch from '../inputSearch';
+import InputSearch from './InputSearch';
 import { useDispatch } from 'react-redux';
 import { setSearchBooks } from '../redux/actions/searchLib';
 import axios from 'axios';

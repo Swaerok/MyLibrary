@@ -12,7 +12,7 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-image: url('../img/vampires_bats.jpg');
+    background-image: url('./img/vampires_bats.jpg');
     background-repeat: no-repeat;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -34,7 +34,7 @@ body {
       width: 241px;
       height: 43px;
       padding: 12px 12px 12px 40px;
-      background-image: url('../img/outline_search.png');
+      background-image: url('./img/outline_search.png');
       background-repeat: no-repeat;
       background-position: 5%;
       border-radius: 50px;

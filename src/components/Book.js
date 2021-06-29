@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-
 function Book({ onHandle, author, title, img, bookKey }) {
   const [image, setImage] = useState(img);
   if (author === 'undefined') {

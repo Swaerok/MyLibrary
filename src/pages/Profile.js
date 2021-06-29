@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
-import SortButton from '../components/SortButton';
+
 import { setSortedBooks } from '../redux/actions/profileBooks';
-import Book from '../book';
+import SortButton from '../components/SortButton';
+import Book from '../components/Book';
+
 const Profile = () => {
   const dispatch = useDispatch();
   const sortBooks = useSelector(({ profileBooks }) => profileBooks.sortBooks);
